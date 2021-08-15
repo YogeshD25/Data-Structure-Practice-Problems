@@ -12,5 +12,5 @@ To build you will need [Git](http://help.github.com/set-up-git-redirect) and [JD
 ### Get the Source Code
 
 ```bash
-git clone https://github.com/YogeshD25/DS-Building-Block.git
+git clone https://github.com/YogeshD25/Data-Structure-Practice-Problems.git
 ```
