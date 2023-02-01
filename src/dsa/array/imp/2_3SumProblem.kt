@@ -3,6 +3,10 @@ package dsa.array.imp
 import java.util.*
 
 
+fun main(){
+
+}
+
 fun twoSum(nums: IntArray, target: Int): IntArray {
 
     var map = mutableMapOf<Int,Int>()
