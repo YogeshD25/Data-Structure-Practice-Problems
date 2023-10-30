@@ -29,6 +29,31 @@ fun main(){
 
     println(list)
 
+    data class Apple(var color:String?= null, var price: Int?=null)
+
+    var apple: Apple? = null
+    apple = Apple()
+
+    var t1 = apple?.apply {
+
+        price = 10
+
+    }
+    println(t1)
+
+
+    var map = mutableMapOf<Int,Int>(1 to 1, 3 to 3, 2 to 2)
+    println(map)
+
+    var arr = mutableListOf<Int>(1,2,3,1,2)
+
+    arr.sortBy{it}
+    println(arr)
+
+
+    var sortedMap  = map.toList().sortedBy{(k,v) -> v}.toMap()
+    println(map)
+
     var carTest = object :CarTest{
         override fun demo(a: Int) {
             println(a)
