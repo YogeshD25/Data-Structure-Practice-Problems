@@ -7,6 +7,8 @@ fun main() {
 
     findUnionOfTwoArray(array1, array2)
     findIntersectionOfTwoArray(array1, array2)
+    findUnionWithoutRepetitionOfNonSortedArray(array1, array2)
+    findUnionWithoutRepetitionOfSortedArray(array1,array2)
 }
 
 fun findIntersectionOfTwoArray(array1: IntArray, array2: IntArray) {
@@ -62,4 +64,60 @@ fun findUnionOfTwoArray(array1: IntArray, array2: IntArray) {
     while (j < arr2Length)
         print("${array2[j++]} ");
 
+}
+
+
+/**
+ *
+ *
+ * Union of the two arrays can be defined as the set containing distinct elements from both the arrays.
+ * If there are repetitions, then only one occurrence of element should be printed in the union.
+ */
+
+fun findUnionWithoutRepetitionOfNonSortedArray(arr1: IntArray, arr2: IntArray) {
+    var set = mutableSetOf<Int>()
+
+    for(i in 0..arr1.size-1) {
+        set.add(arr1[i])
+    }
+
+    for (i in 0..arr2.size-1) {
+        set.add(arr2[i])
+    }
+
+    println(set.size)
+}
+
+fun findUnionWithoutRepetitionOfSortedArray(arr1: IntArray, arr2: IntArray) {
+    var m = arr1.size - 1
+    var n = arr2.size - 1
+    var i = 0
+    var j = 0
+    var unionList = mutableListOf<Int>()
+    while (i <= m && j <= n) {
+        when {
+            arr1[i] < arr2[j] -> {
+                unionList.add(arr1[i])
+                i++
+            }
+            arr1[i] > arr2[j] -> {
+                unionList.add(arr2[j])
+                j++
+            } else -> {
+                unionList.add(arr1[i])
+                i++
+                j++
+            }
+        }
+    }
+
+    while (i <= m){
+        unionList.add(arr1[i])
+        i++
+    }
+    while (j <= n){
+        unionList.add(arr2[j])
+        j++
+    }
+    println(unionList)
 }
